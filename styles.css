@@ -1,7 +1,40 @@
 body {
   text-align: center;
-  background-color: #283149;
+  /* background-color: #283149; */
+  background: linear-gradient(to bottom, #000000, #434343);
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
+
+
+.star {
+  /* Create stars */
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  animation: moveStar 5s linear infinite;
+}
+/* Generate random stars */
+@for $i from 1 through 100 {
+  .star:nth-child(#{$i}) {
+    top: random(100) * 1%;
+    left: random(100) * 1%;
+    animation-duration: random(5) + 2s;
+  }
+}
+
+/* Animate the stars */
+@keyframes moveStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
 
 .container{
   display: flex;
@@ -13,7 +46,7 @@ h1 {
   font-size: 5rem;
   color: #DBEDF3;
   font-family: "Arvo", cursive;
-  text-shadow: 3px 0 #04da8c;
+  text-shadow: 5px 3px #0ea0c5;
 
 }
 
