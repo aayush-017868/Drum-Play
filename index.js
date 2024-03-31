@@ -1,24 +1,26 @@
 // for(let i = 0; i < 8; i++){
-//     document.querySelectorAll('button')[i].addEventListener("click", function () {
-//       alert("I got clicked");
+//     document.querySelectorAll('button')[i].addEventListener('click', function () {
+//       alert('I got clicked');
 //     });
 // }
 
 //Whenever, we are selecting the class or id through querySelector or querySelectorAll, then we should use . for class and # for id
 //This variable counts the total no. of elements with drum class
-var numOfDrumButtons = document.querySelectorAll(".drum").length;
+var numOfDrumButtons = document.querySelectorAll('.drum').length;
 //Detecting button press
 for (var i = 0; i < numOfDrumButtons; i++) {
-  document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+  document.querySelectorAll('.drum')[i].addEventListener('click', function () {
     //Taking out the button textContent into a variable
     var button = this.textContent;
     playSound(button);
+    buttonAnimation(button);
   });
 }
 
 // Detecting keyboard press
-document.addEventListener("keypress", function (event) {
+document.addEventListener('keypress', function (event) {
     playSound(event.key);
+    buttonAnimation(event.key);
 });
 
 //Detecting button clicks
@@ -59,4 +61,15 @@ function playSound(button){
             console.log(button.textContent);
             break;
        }
+}
+
+function buttonAnimation(currentKey){
+        var activeBtn = document.querySelector("."+currentKey);
+        activeBtn.classList.add("pressed");
+
+        //Now we have to remove this effect as well after a few sec after the key got pressed
+        //Hence, using Timeout function(function, delay)
+        setTimeout(() => {
+            activeBtn.classList.remove('pressed');
+        }, 100);
 }
