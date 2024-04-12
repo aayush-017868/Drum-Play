@@ -1,6 +1,6 @@
 # Super Drum Kit 🥁
 
-Welcome to the Super Drum Kit! This is a fun and interactive drum kit website that allows you to play different drum sounds right from your browser.
+Welcome to the [Super Drum Kit](https://aayush-017868.github.io/Drum-Play/)! This is a fun and interactive drum kit website that allows you to play different drum sounds right from your browser.
 
 ## Features 🌟
 
